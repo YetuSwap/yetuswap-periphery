@@ -12,7 +12,7 @@ const overrides = {
   gasLimit: 9999999
 }
 
-describe('UniswapV2Router02', () => {
+describe('YetuswapRouter02', () => {
   const provider = new MockProvider({
     hardfork: 'istanbul',
     mnemonic: 'horn horn horn horn horn horn horn horn horn horn horn horn',
@@ -57,7 +57,7 @@ describe('UniswapV2Router02', () => {
     )
 
     await expect(router.getAmountsOut(bigNumberify(2), [token0.address])).to.be.revertedWith(
-      'UniswapV2Library: INVALID_PATH'
+      'YetuswapLibrary: INVALID_PATH'
     )
     const path = [token0.address, token1.address]
     expect(await router.getAmountsOut(bigNumberify(2), path)).to.deep.eq([bigNumberify(2), bigNumberify(1)])
